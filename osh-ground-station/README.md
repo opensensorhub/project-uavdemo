@@ -9,7 +9,10 @@
   * Copy the .zip file created in the `build/distributions` folder during the build process
   * Unzip the file on the GCS computer
   * Run OSH using the `./launch.sh` script
-  * Make sure it is working properly by connecting to <http://localhost:8181/sensorhub/admin>  
+  * Make sure it is working properly by connecting to <http://localhost:8181/sensorhub/admin>. You should see:
+      * Two sensors 'Solo Telemetry' and 'Solo Video Cam' in the _LOADED_ state
+      * Two corresponding storages in the 'STARTING' state
+      * The SOS Service should be in the 'STARTED' state
   
   
 ### Run and connect to the Solo UAV
@@ -19,6 +22,7 @@ _Note: The following instructions assume you have properly setup your Solo with 
   1. Connect the GCS computer to the Internet (if you're on the field, use a mobile phone connected to USB to get Internet via 4G/LTE)
   1. Connect the GCS computer to the SoloLink WiFi network using the password you set in the Solo App
   1. Launch OSH on GCS using the `./launch.sh` script
+  1. Open the [Web Admin](http://docs.opensensorhub.org/user/web-admin/) at <http://localhost:8181/sensorhub/admin>  
   1. Start the _Solo Telemetry_ sensor adapter by right clicking it int the _Sensors_ section and selecting _Start_ in the context menu
   1. Check that data is received by selecting the driver and clicking the _Refresh_ button next to _Outputs_ in the right panel
      (data should update every second)
@@ -39,6 +43,15 @@ To get correct geolocation of the video on the 3D map, you have to customize a f
   1. Adjust the MSL to WGS84 offset on line 19
   1. Input the correct camera matrix and distortion coefficients on line 276
   1. Restart the client
+  
+  
+### Updating the Solo's firmware
+
+In order to get precise gimbal angles from the Solo, you'll have to update the on-board firmware (ardupilot) with our own version. You can download this version [here](https://drive.google.com/file/d/0B3EZQJqOfG9sbUNNMEgzN0VaZzA/view?usp=sharing).
+
+Follow the steps indicated in this [3DR Solo Guide](http://ardupilot.org/dev/docs/solo.html) to upload this firmware to the Solo
+
+
 
 
 
