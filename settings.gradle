@@ -1,0 +1,23 @@
+rootProject.name = 'project-uavdemo'
+def oshMainDir = "$rootDir/.."
+gradle.ext.oshCoreDir = "$oshMainDir/osh-core"
+
+// include builds from other repos
+def repos = ['osh-core', 'osh-comm', 'osh-sensors', 'osh-video']
+repos.each { repoName ->
+  File repoDir = new File(oshMainDir, repoName)
+  if (!repoDir.exists())
+    throw new GradleException('Repository ' + repoName + ' is missing. Please clone it from https://github.com/opensensorhub/' + repoName)  
+  includeBuild repoDir
+}
+  
+// include all folders with build.gradle as subprojects
+FileTree subprojects = fileTree(rootDir).include('*/build.gradle')
+subprojects.files.each { File f ->
+  File projectFolder = f.parentFile
+  if (projectFolder != rootDir) {
+    String projectName = projectFolder.name
+    include projectName
+    project(':' + projectName).projectDir = projectFolder
+  }
+}

@@ -1,0 +1,215 @@
+[
+  {
+    "objClass": "org.sensorhub.impl.service.HttpServerConfig",
+    "httpPort": 8181,
+    "httpsPort": 0,
+    "staticDocRootUrl": "web",
+    "servletsRootUrl": "/sensorhub",
+    "maxRequestsPerSecond": 25,
+    "authMethod": "NONE",
+    "keyStorePath": ".keystore/ssl_keys",
+    "trustStorePath": ".keystore/ssl_trust",
+    "id": "9b357b97-26fd-4216-b597-dccfe6f3e383",
+    "moduleClass": "org.sensorhub.impl.service.HttpServer",
+    "name": "HTTP Server",
+    "autoStart": true
+  },
+  {
+    "objClass": "org.sensorhub.ui.AdminUIConfig",
+    "widgetSet": "org.sensorhub.ui.SensorHubWidgetSet",
+    "customPanels": [],
+    "customForms": [],
+    "id": "f843291f-a926-43c4-8a49-a6a8ac2f8c97",
+    "moduleClass": "org.sensorhub.ui.AdminUIModule",
+    "name": "Admin UI",
+    "autoStart": true
+  },
+  {
+    "objClass": "org.sensorhub.impl.comm.zeroconf.IpNetworkConfig",
+    "networkInterface": "enx00e04c680132",
+    "zeroConfHostName": "OSH",
+    "id": "3e6eeb1a-99af-42a5-936a-ff94972085ea",
+    "moduleClass": "org.sensorhub.impl.comm.zeroconf.IpCommNetwork",
+    "name": "ZeroConf",
+    "autoStart": true
+  },
+  {
+    "objClass": "org.sensorhub.impl.service.sos.SOSServiceConfig",
+    "enableTransactional": true,
+    "maxObsCount": 100,
+    "maxRecordCount": 100000,
+    "newStorageConfig": {
+      "objClass": "org.sensorhub.impl.persistence.perst.BasicStorageConfig",
+      "memoryCacheSize": 1024,
+      "objectCacheSize": 100,
+      "storagePath": "db.dat",
+      "moduleClass": "org.sensorhub.impl.persistence.perst.ObsStorageImpl",
+      "autoStart": false
+    },
+    "dataProviders": [
+      {
+        "objClass": "org.sensorhub.impl.service.sos.SensorDataProviderConfig",
+        "sensorID": "b7dc16e0-374c-4254-b8dd-49fccffa5cc3",
+        "storageID": "b7dc16e0-374c-4254-b8dd-49fccffaee22",
+        "hiddenOutputs": [],
+        "liveDataTimeout": 10.0,
+        "maxFois": 10,
+        "Offering ID": "urn:osh:solo-nav",
+        "enabled": true
+      },
+      {
+        "objClass": "org.sensorhub.impl.service.sos.SensorDataProviderConfig",
+        "sensorID": "2b002777-c01c-4331-a520-8caf419784a3",
+        "storageID": "2b002777-c01c-4331-a520-8caf419744ff",
+        "hiddenOutputs": [],
+        "liveDataTimeout": 10.0,
+        "maxFois": 10,
+        "Offering ID": "urn:osh:solo-video",
+        "enabled": true
+      }
+    ],
+    "dataConsumers": [],
+    "customFormats": [
+      {
+        "objClass": "org.sensorhub.impl.service.sos.SOSCustomFormatConfig",
+        "mimeType": "video/mp4",
+        "className": "org.sensorhub.impl.service.sos.video.MP4Serializer"
+      },
+      {
+        "objClass": "org.sensorhub.impl.service.sos.SOSCustomFormatConfig",
+        "mimeType": "video/x-motion-jpeg",
+        "className": "org.sensorhub.impl.service.sos.video.MJPEGSerializer"
+      }
+    ],
+    "security": {
+      "objClass": "org.sensorhub.api.security.SecurityConfig",
+      "enableAccessControl": false,
+      "requireAuth": true
+    },
+    "ogcCapabilitiesInfo": {
+      "objClass": "org.sensorhub.impl.service.ogc.OGCServiceConfig$CapabilitiesInfo",
+      "title": "Field Node SOS Server",
+      "description": "SOS hosting all data collected from local sensors and UAV",
+      "serviceProvider": {
+        "objClass": "org.vast.util.ResponsibleParty",
+        "individualName": "Tim Haynie",
+        "organizationName": "Spectrabotics Inc.",
+        "positionName": "CEO",
+        "voiceNumbers": [],
+        "faxNumbers": [],
+        "deliveryPoints": [],
+        "city": "Colorado Springs",
+        "administrativeArea": "CO",
+        "country": "USA",
+        "emails": [],
+        "hrefPresent": false
+      }
+    },
+    "enableHttpGET": true,
+    "enableHttpPOST": true,
+    "enableSOAP": true,
+    "endPoint": "/sos",
+    "id": "d1050494-dfc4-4318-8592-530984056cd6",
+    "moduleClass": "org.sensorhub.impl.service.sos.SOSService",
+    "name": "SOS Service",
+    "autoStart": true
+  },
+  {
+    "objClass": "org.sensorhub.impl.sensor.mavlink.MavlinkConfig",
+    "vehicleID": "solo:S115A58000000",
+    "maxTravelDistance": 150.0,
+    "maxAltitude": 50.0,
+    "activeMessages": [
+      "GLOBAL_POSITION",
+      "ATTITUDE",
+      "GIMBAL_REPORT"
+    ],
+    "activeCommands": [],
+    "commSettings": {
+      "objClass": "org.sensorhub.impl.comm.UDPCommProviderConfig",
+      "protocol": {
+        "objClass": "org.sensorhub.impl.comm.UDPConfig",
+        "remotePort": 14560,
+        "localPort": 14550,
+        "remoteHost": "10.1.1.10",
+        "localAddress": "AUTO"
+      },
+      "moduleClass": "org.sensorhub.impl.comm.UDPCommProvider",
+      "autoStart": false
+    },
+    "id": "b7dc16e0-374c-4254-b8dd-49fccffa5cc3",
+    "moduleClass": "org.sensorhub.impl.sensor.mavlink.MavlinkDriver",
+    "name": "Solo Telemetry",
+    "autoStart": false
+  },
+  {
+    "objClass": "org.sensorhub.impl.sensor.rtpcam.RTPCameraConfig",
+    "cameraID": "solo:S115A58000000",
+    "rtsp": {
+      "objClass": "org.sensorhub.impl.sensor.rtpcam.RTSPConfig",
+      "localUdpPort": 5600,
+      "onlyConnectRtsp": true,
+      "remotePort": 5502,
+      "enableTLS": false,
+      "remoteHost": "10.1.1.1",
+      "localAddress": "AUTO"
+    },
+    "connection": {
+      "objClass": "org.sensorhub.impl.comm.RobustIPConnectionConfig",
+      "checkReachability": true,
+      "connectTimeout": 3000,
+      "reconnectPeriod": 10000,
+      "reconnectAttempts": 0
+    },
+    "video": {
+      "objClass": "org.sensorhub.impl.sensor.rtpcam.RTPCameraConfig$VideoConfig",
+      "frameWidth": 1280,
+      "frameHeight": 720,
+      "frameRate": 30,
+      "grayscale": false
+    },
+    "position": {
+      "objClass": "org.sensorhub.api.sensor.PositionConfig"
+    },
+    "id": "2b002777-c01c-4331-a520-8caf419784a3",
+    "moduleClass": "org.sensorhub.impl.sensor.rtpcam.RTPCameraDriver",
+    "name": "Solo Video Cam",
+    "autoStart": false
+  },
+  {
+    "objClass": "org.sensorhub.impl.persistence.StreamStorageConfig",
+    "storageConfig": {
+      "objClass": "org.sensorhub.impl.persistence.perst.BasicStorageConfig",
+      "memoryCacheSize": 1024,
+      "objectCacheSize": 100,
+      "storagePath": "solo-nav.dat",
+      "moduleClass": "org.sensorhub.impl.persistence.perst.ObsStorageImpl",
+      "autoStart": false
+    },
+    "dataSourceID": "b7dc16e0-374c-4254-b8dd-49fccffa5cc3",
+    "minCommitPeriod": 10000,
+    "processEvents": true,
+    "id": "b7dc16e0-374c-4254-b8dd-49fccffaee22",
+    "moduleClass": "org.sensorhub.impl.persistence.GenericStreamStorage",
+    "name": "Solo Nav DataStore",
+    "autoStart": true
+  },
+  {
+    "objClass": "org.sensorhub.impl.persistence.StreamStorageConfig",
+    "storageConfig": {
+      "objClass": "org.sensorhub.impl.persistence.perst.BasicStorageConfig",
+      "memoryCacheSize": 1024,
+      "objectCacheSize": 100,
+      "storagePath": "solo-video.dat",
+      "moduleClass": "org.sensorhub.impl.persistence.perst.ObsStorageImpl",
+      "autoStart": false
+    },
+    "dataSourceID": "2b002777-c01c-4331-a520-8caf419784a3",
+    "minCommitPeriod": 10000,
+    "processEvents": true,
+    "id": "2b002777-c01c-4331-a520-8caf419744ff",
+    "moduleClass": "org.sensorhub.impl.persistence.GenericStreamStorage",
+    "name": "Solo Video DataStore",
+    "autoStart": true
+  }
+]

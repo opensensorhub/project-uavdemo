@@ -1,0 +1,44 @@
+apply from: gradle.oshCoreDir + '/common.gradle'
+
+description = 'UAV Demo Ground Station'
+ext.details = 'OSH node connected to the UAV, running on the Ground Control Station (GCS) computer'
+
+// get repositories collected in parent build
+repositories.addAll(rootProject.repositories)
+
+dependencies {
+  compile 'org.sensorhub:sensorhub-core:' + oshCoreVersion
+  compile 'org.sensorhub:sensorhub-service-swe:' + oshCoreVersion
+  compile 'org.sensorhub:sensorhub-storage-perst:' + oshCoreVersion
+  compile 'org.sensorhub:sensorhub-webui-core:' + oshCoreVersion
+  compile 'org.sensorhub:sensorhub-tools:' + oshCoreVersion
+  compile 'org.sensorhub:sensorhub-service-video:[0.1,2.0)'
+  compile 'org.sensorhub:sensorhub-comm-ip-zeroconf:' + oshCoreVersion
+  compile 'org.sensorhub:sensorhub-driver-fakegps:[0.1,2.0)'
+  compile 'org.sensorhub:sensorhub-driver-fakeweather:[0.1,2.0)'
+  compile 'org.sensorhub:sensorhub-driver-videocam:[0.1,2.0)'
+  compile 'org.sensorhub:sensorhub-driver-rtpcam:[0.1,2.0)'
+  compile 'org.sensorhub:sensorhub-driver-mavlink:[0.1,2.0)'
+  //compile 'org.sensorhub:sensorhub-driver-trupulse:[0.1,2.0)'
+}
+
+distributions {
+  main {
+    contents {
+      from 'scripts'
+      from 'config'
+      from 'README.md'
+      into('web') {
+        from 'web'
+      }
+      into('lib') {
+        from project.configurations.compileClasspath
+      }
+    }
+  }
+}
+
+
+
+
+

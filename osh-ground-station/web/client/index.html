@@ -1,0 +1,66 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <!-- Make the application on mobile take up the full browser screen and disable user scaling. -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <title>UAV Command (OpenSensorHub)</title>
+
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+
+    <!-- Cesium -->
+    <script src="toolkit/vendor/cesium/Cesium.js"></script>
+    <link rel="stylesheet" type="text/css" href="toolkit/vendor/cesium/Widgets/widgets.css"/>
+
+    <!-- FFMPEG H264 decoder -->
+    <script type="text/javascript" src="toolkit/vendor/ffmpeg/YUVCanvas.js"></script>
+    <script type="text/javascript" src="toolkit/vendor/ffmpeg/ffmpeg-h264.js"></script>
+    
+    <!-- Broadway H264 decoder
+    <script type="text/javascript" src="toolkit/vendor/broadway/YUVCanvas.js"></script>
+    <script type="text/javascript" src="toolkit/vendor/broadway/Decoder.js"></script>
+    <script type="text/javascript" src="toolkit/vendor/broadway/Player.js"></script>-->
+
+    <!-- Nvd3 -->
+    <script src="toolkit/vendor/nvd3/d3.min.js"></script>
+    <script src="toolkit/vendor/nvd3/nv.d3.min.js"></script>
+    <link rel="stylesheet" href="toolkit/vendor/nvd3/nv.d3.min.css" />
+    
+    <!-- Tree -->
+    <script src="toolkit/vendor/tree/tree.js"></script>
+    <link rel="stylesheet" href="toolkit/vendor/tree/tree.css" />
+
+    <!-- Slider -->
+    <script src="toolkit/vendor/nouislider/wNumb.js"></script>
+    <script src="toolkit/vendor/nouislider/nouislider.min.js"></script>
+    <link rel="stylesheet" href="toolkit/vendor/nouislider/nouislider.min.css" />
+    
+    <!-- OSH -->
+    <link rel="stylesheet" type="text/css" href="toolkit/css/osh.css">
+    <script type="text/javascript" src="toolkit/js/osh.js"></script>
+
+    <!-- This client configuration -->
+    <link rel="stylesheet" type="text/css" href="css/client.css">    
+    <script type="text/javascript" src="js/osh-config.js"></script>
+</head>
+
+<body onload="init()" id="body">
+    <nav class="navbar navbar-default navbar-inverse ">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="http://www.opensensorhub.org/">
+                    <img src="https://github.com/sensiasoft/sensorhub/wiki/images/sensorhub_logo_128.png"
+                         style="-webkit-animation-play-state: paused; -webkit-transition: none; transition: none; width:50px;height:50px;">
+                    OpenSensorHub</a>
+            </div>
+        </div>
+    </nav>
+    <a class="snapshot-btn fa fa-camera fa-3x" onclick="snapshotClick()"></a>
+    <div id="main-container" class="main-view"></div>
+    <div id="tasking-container" class="tasking-container"></div>
+    <div id="dialog-main-container" class="video-main-container"></div>    
+    <div class="rangeSlider-container">
+        <div id="rangeSlider" class="rangeSlider"></div>
+    </div>
+</body>
+</html>

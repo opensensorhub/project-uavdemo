@@ -1,0 +1,39 @@
+apply from: gradle.oshCoreDir + '/common.gradle'
+
+description = 'UAV Demo Cloud Server'
+ext.details = 'OSH node that receives and publishes data acquired by the UAV, usually running on a larger computer'
+
+// get repositories collected in parent build
+repositories.addAll(rootProject.repositories)
+
+dependencies {
+  compile 'org.sensorhub:sensorhub-core:' + oshCoreVersion
+  compile 'org.sensorhub:sensorhub-service-swe:' + oshCoreVersion
+  compile 'org.sensorhub:sensorhub-storage-perst:' + oshCoreVersion
+  compile 'org.sensorhub:sensorhub-webui-core:' + oshCoreVersion
+  compile 'org.sensorhub:sensorhub-tools:' + oshCoreVersion
+  compile 'org.sensorhub:sensorhub-service-video:[0.1,2.0)'
+  compile 'org.sensorhub:sensorhub-driver-fakegps:[0.1,2.0)'
+  compile 'org.sensorhub:sensorhub-driver-fakeweather:[0.1,2.0)'
+}
+
+distributions {
+  main {
+    contents {
+      from 'scripts'
+      from 'config'
+      from 'README.md'
+      into('web') {
+        from 'web'
+      }
+      into('lib') {
+        from project.configurations.compileClasspath
+      }
+    }
+  }
+}
+
+
+
+
+
