@@ -288,7 +288,7 @@ function init() {
             draggable: false,
             css: "video-dialog",
             name: entityName + " - Altitude",
-            show: false,
+            show: true,
             dockable: true,
             closeable: true,
             canDisconnect : true,
@@ -375,7 +375,7 @@ function init() {
             endTime: endTime,
             replaySpeed: "1",
             syncMasterTime: sync,
-            bufferingTime: 500,
+            bufferingTime: bufferingTime,
             timeOut: dataStreamTimeOut
         });
         
@@ -389,7 +389,7 @@ function init() {
             endTime: endTime,
             replaySpeed: "1",
             syncMasterTime: sync,
-            bufferingTime: 500,
+            bufferingTime: bufferingTime,
             timeOut: dataStreamTimeOut
         });
     
@@ -403,7 +403,7 @@ function init() {
             endTime: endTime,
             replaySpeed: "1",
             syncMasterTime: sync,
-            bufferingTime: 500,
+            bufferingTime: bufferingTime,
             timeOut: dataStreamTimeOut
         });
         
@@ -419,7 +419,7 @@ function init() {
                 endTime: endTime,
                 replaySpeed: "1",
                 syncMasterTime: sync,
-                bufferingTime: 500,
+                bufferingTime: bufferingTime,
                 timeOut: dataStreamTimeOut
             });
         }
@@ -487,7 +487,7 @@ function init() {
             draggable: false,
             css: "video-dialog-43",
             name: entityName,
-            show: true,
+            show: false,
             dockable: true,
             closeable: true,
             canDisconnect : true,
