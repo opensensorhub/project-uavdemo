@@ -1,6 +1,7 @@
 ### Build
 
-run `./gradlew build` in the parent folder
+  * See OSH [Developer's Guide](http://docs.opensensorhub.org/dev/dev-guide/#building-from-source) to clone the needed 'osh-core', 'osh-comm', 'osh-sensors' and 'osh-video' repositories
+  * Run `./gradlew build` in the 'project-uavdemo' folder
 
 
 ### Install
@@ -11,14 +12,35 @@ run `./gradlew build` in the parent folder
   * Make sure it is working properly by connecting to <http://localhost:8181/sensorhub/admin>  
   
   
-### Run and Connect to the UAV
+### Run and connect to the Solo UAV
 
-_Note: The following instructions assume you have properly setup your Solo and optionally updated the firmware to get gimbal data._ 
+_Note: The following instructions assume you have properly setup your Solo with a GoPro mounted on the gimbal and optionally updated the firmware to get gimbal data._ 
 
   1. Connect the GCS computer to the Internet (if you're on the field, use a mobile phone connected to USB to get Internet via 4G/LTE)
   1. Connect the GCS computer to the SoloLink WiFi network using the password you set in the Solo App
   1. Launch OSH on GCS using the `./launch.sh` script
-  1. Start the 'Solo Telemetry' driver by right clicking it and selecting 'Start' in the context menu
-  1. Check that data is received by selecting the driver and clicking the 'Refresh' button next to 'Outputs' in the right panel
+  1. Start the _Solo Telemetry_ sensor adapter by right clicking it int the _Sensors_ section and selecting _Start_ in the context menu
+  1. Check that data is received by selecting the driver and clicking the _Refresh_ button next to _Outputs_ in the right panel
      (data should update every second)
+  1. Repeat the previous two steps with the _Solo Video Cam_ sensor adapter
+  
+  
+### View the data
+
+You can start the client in a browser right away:
+
+  1. Wait for Solo to get a GPS lock
+  1. Start the web client by connecting to <http://localhost:8181/client/index.html>
+     You should see the video data coming from the Solo GoPro as well as the altitude chart
+     
+To get correct geolocation of the video on the 3D map, you have to customize a few more things in the Javascript code:
+
+  1. Open the `osh-config.js` file located in the `web/client/js` folder (part of the package you unzipped during install)
+  1. Adjust the MSL to WGS84 offset on line 19
+  1. Input the correct camera matrix and distortion coefficients on line 276
+  1. Restart the client
+
+
+
+
   
