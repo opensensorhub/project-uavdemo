@@ -2,23 +2,29 @@ function init() {
     
     var hostName = "localhost:8181";
 
-    // time settings (real-time or archive)
+    // time settings
+    // for real-time
     var startTime = "now";
     var endTime = "2080-01-01T00:00:00Z";
-    //var startTime = "2017-03-03T09:00:40Z";
-    //var endTime = "2017-03-03T09:22:00Z";
-    var replaySpeed = "1";
-    
-    // synchronization (disable for real-time)
     var sync = false;
+    
+    // for replay
+    /*var startTime = "2017-03-09T16:10:40Z";
+    var endTime = "2017-03-09T16:15:10.529Z";
+    var sync = true;*/
+
+    var replaySpeed = "1";
     var bufferingTime = 300;
     var dataStreamTimeOut = 4000;
     var useFFmpegWorkers = true;
         
     // MSL to ellipsoid correction
-    var mslToWgs84 = 53.5; // Toulouse
+    //var mslToWgs84 = 53.5; // Toulouse
     //var mslToWgs84 = -29.5+5; // Huntsville Airport Road
     //var mslToWgs84 = -29-4; // Madison
+    var mslToWgs84 = -23;//-17.374; // Colorado Springs
+    var soloHeadingAdjust = 0.0;
+    var soloAltitudeAdjust = 0.0; 
     
     // menu ids
     var treeMenuId = "tree-menu-";
@@ -73,9 +79,8 @@ function init() {
     // time slider view
     if (startTime !== "now") {
         var rangeSlider = new OSH.UI.RangeSlider("rangeSlider",{
-            startTime: soloGPS.properties.startTime,
-            endTime: soloGPS.properties.endTime,
-            dataSourcesId: [soloGPS.id]
+            startTime: startTime,
+            endTime: endTime
         });
     }    
 
@@ -236,7 +241,7 @@ function init() {
                         return {
                             x: rec.lon,
                             y: rec.lat,
-                            z: rec.alt+mslToWgs84 
+                            z: rec.alt + mslToWgs84 + soloAltitudeAdjust
                         };
                     }
                 },
@@ -244,11 +249,16 @@ function init() {
                     dataSourceIds: [attitudeData.getId()],
                     handler: function(rec) {
                         return {
-                            heading: rec.heading,
+                            heading: rec.heading + soloHeadingAdjust,
                             pitch: 0,// rec.pitch,
                             roll: 0,// rec.roll
                         };
                     }
+                },
+                gimbalOrientation: {
+                    heading: 0,
+                    pitch: -90,
+                    roll: 0
                 },
                 gimbalOrientationFunc: {
                     dataSourceIds: [gimbalData.getId()],
@@ -260,10 +270,10 @@ function init() {
                         };
                     }
                 },
-                /*snapshotFunc: function() {
+                snapshotFunc: function() {
                     var enabled = takePicture;
                     takePicture = false; return enabled;
-                },*/                
+                },                
                 /* GoPro Alex */
                 /*
                  * cameraModel: { camProj: new Cesium.Matrix3(435.48/752., 0.0,
@@ -550,6 +560,30 @@ function init() {
         var treeMenu = new OSH.UI.ContextMenu.StackMenu({id: treeMenuId+entityID, groupId: menuGroupId, items: menuItems});
         
         return entity;
+    }
+
+
+    function addAdjusmentSliders() {
+        
+        var headingAdj = document.getElementById("headingAdj");
+        var headingAdjVal = document.getElementById("headingAdjVal");
+        headingAdj.min = -200;
+        headingAdj.max = 200;
+        headingAdj.value = 0;
+        headingAdj.oninput = function() {
+            soloHeadingAdjust = headingAdj.value/10.0;
+            headingAdjVal.innerHTML = " "+soloHeadingAdjust+"°";
+        };
+
+        var altitudeAdj = document.getElementById("altitudeAdj");
+        var altitudeAdjVal = document.getElementById("altitudeAdjVal");
+        altitudeAdj.min = -250;
+        altitudeAdj.max = 250;
+        altitudeAdj.value = 0;
+        altitudeAdj.oninput = function() {
+            soloAltitudeAdjust = altitudeAdj.value/10.0;
+            altitudeAdjVal.innerHTML = " "+soloAltitudeAdjust+"m";
+        };
     }
 
 } // end init()

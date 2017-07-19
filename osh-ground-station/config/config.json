@@ -31,7 +31,7 @@
     "id": "3e6eeb1a-99af-42a5-936a-ff94972085ea",
     "moduleClass": "org.sensorhub.impl.comm.zeroconf.IpCommNetwork",
     "name": "ZeroConf",
-    "autoStart": true
+    "autoStart": false
   },
   {
     "objClass": "org.sensorhub.impl.service.sos.SOSServiceConfig",

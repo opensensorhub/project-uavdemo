@@ -1,3 +1,19 @@
+/***************************** BEGIN LICENSE BLOCK ***************************
+
+ The contents of this file are subject to the Mozilla Public License, v. 2.0.
+ If a copy of the MPL was not distributed with this file, You can obtain one
+ at http://mozilla.org/MPL/2.0/.
+
+ Software distributed under the License is distributed on an "AS IS" basis,
+ WITHOUT WARRANTY OF ANY KIND, either express or implied. See the License
+ for the specific language governing rights and limitations under the License.
+
+ Copyright (C) 2015-2017 Richard Becker. All Rights Reserved.
+
+ Author: Richard Becker <beckerr@prominentedge.com>
+
+ ******************************* END LICENSE BLOCK ***************************/
+
 /* Simple JavaScript Inheritance
 * By John Resig http://ejohn.org/
 * MIT Licensed.
@@ -64,6 +80,22 @@
         return BaseClass;
     };
 })();
+/***************************** BEGIN LICENSE BLOCK ***************************
+
+ The contents of this file are subject to the Mozilla Public License, v. 2.0.
+ If a copy of the MPL was not distributed with this file, You can obtain one
+ at http://mozilla.org/MPL/2.0/.
+
+ Software distributed under the License is distributed on an "AS IS" basis,
+ WITHOUT WARRANTY OF ANY KIND, either express or implied. See the License
+ for the specific language governing rights and limitations under the License.
+
+ Copyright (C) 2015-2017 Mathieu Dhainaut. All Rights Reserved.
+
+ Author: Mathieu Dhainaut <mathieu.dhainaut@gmail.com>
+
+ ******************************* END LICENSE BLOCK ***************************/
+
 /**
  * @namespace {object} OSH
  */
@@ -135,6 +167,21 @@ function isUndefined(object) {
 function isUndefinedOrNull(object) {
 	return typeof(object) === "undefined" || object === null;
 }
+/***************************** BEGIN LICENSE BLOCK ***************************
+
+The contents of this file are subject to the Mozilla Public License, v. 2.0.
+If a copy of the MPL was not distributed with this file, You can obtain one
+at http://mozilla.org/MPL/2.0/.
+
+Software distributed under the License is distributed on an "AS IS" basis,
+WITHOUT WARRANTY OF ANY KIND, either express or implied. See the License
+for the specific language governing rights and limitations under the License.
+
+Copyright (C) 2015-2017 Richard Becker. All Rights Reserved.
+
+Author: Richard Becker <beckerr@prominentedge.com>
+
+******************************* END LICENSE BLOCK ***************************/
 /*
  * @namespace Browser
  * @aka OSH.Browser
@@ -284,6 +331,22 @@ function isUndefinedOrNull(object) {
 	};
 
 }());
+/***************************** BEGIN LICENSE BLOCK ***************************
+
+ The contents of this file are subject to the Mozilla Public License, v. 2.0.
+ If a copy of the MPL was not distributed with this file, You can obtain one
+ at http://mozilla.org/MPL/2.0/.
+
+ Software distributed under the License is distributed on an "AS IS" basis,
+ WITHOUT WARRANTY OF ANY KIND, either express or implied. See the License
+ for the specific language governing rights and limitations under the License.
+
+ Copyright (C) 2015-2017 Mathieu Dhainaut. All Rights Reserved.
+
+ Author: Mathieu Dhainaut <mathieu.dhainaut@gmail.com>
+
+ ******************************* END LICENSE BLOCK ***************************/
+
 var MAX_LONG = Math.pow(2, 53) + 1;
 
 /**
@@ -549,7 +612,9 @@ OSH.Utils.getYCursorPosition = function() {
  * @memberof OSH.Utils
  */
 OSH.Utils.isArrayIntersect = function(a, b) {
-  return a.intersect(b).length > 0;
+  return a.filter(function(element){
+        return b.indexOf(element) > -1;
+       }).length > 0;
 };
 
 
@@ -614,6 +679,22 @@ OSH.Utils.addCss = function(div,css) {
   div.setAttribute("class",div.className+" "+css);
 };
 
+
+/***************************** BEGIN LICENSE BLOCK ***************************
+
+ The contents of this file are subject to the Mozilla Public License, v. 2.0.
+ If a copy of the MPL was not distributed with this file, You can obtain one
+ at http://mozilla.org/MPL/2.0/.
+
+ Software distributed under the License is distributed on an "AS IS" basis,
+ WITHOUT WARRANTY OF ANY KIND, either express or implied. See the License
+ for the specific language governing rights and limitations under the License.
+
+ Copyright (C) 2015-2017 Richard Becker. All Rights Reserved.
+
+ Author: Richard Becker <beckerr@prominentedge.com>
+
+ ******************************* END LICENSE BLOCK ***************************/
 
 /*
  * @namespace DomEvent
@@ -926,6 +1007,22 @@ OSH.DomEvent.addListener = OSH.DomEvent.on;
 // @function removeListener(…): this
 // Alias to [`OSH.DomEvent.off`](#domevent-off)
 OSH.DomEvent.removeListener = OSH.DomEvent.off;
+/***************************** BEGIN LICENSE BLOCK ***************************
+
+ The contents of this file are subject to the Mozilla Public License, v. 2.0.
+ If a copy of the MPL was not distributed with this file, You can obtain one
+ at http://mozilla.org/MPL/2.0/.
+
+ Software distributed under the License is distributed on an "AS IS" basis,
+ WITHOUT WARRANTY OF ANY KIND, either express or implied. See the License
+ for the specific language governing rights and limitations under the License.
+
+ Copyright (C) 2015-2017 Mathieu Dhainaut. All Rights Reserved.
+
+ Author: Mathieu Dhainaut <mathieu.dhainaut@gmail.com>
+
+ ******************************* END LICENSE BLOCK ***************************/
+
 OSH.MapEvent = BaseClass.extend({
 
     initialize:function() {
@@ -955,6 +1052,22 @@ OSH.MapEvent = BaseClass.extend({
         }
     }
 });
+/***************************** BEGIN LICENSE BLOCK ***************************
+
+ The contents of this file are subject to the Mozilla Public License, v. 2.0.
+ If a copy of the MPL was not distributed with this file, You can obtain one
+ at http://mozilla.org/MPL/2.0/.
+
+ Software distributed under the License is distributed on an "AS IS" basis,
+ WITHOUT WARRANTY OF ANY KIND, either express or implied. See the License
+ for the specific language governing rights and limitations under the License.
+
+ Copyright (C) 2015-2017 Mathieu Dhainaut. All Rights Reserved.
+
+ Author: Mathieu Dhainaut <mathieu.dhainaut@gmail.com>
+
+ ******************************* END LICENSE BLOCK ***************************/
+
 /**
  *
  * @constructor
@@ -1024,6 +1137,22 @@ OSH.EventManager.EVENT = {
     ADD_VIEW_ITEM: "addViewItem",
     RESIZE:"resize"
 };
+
+/***************************** BEGIN LICENSE BLOCK ***************************
+
+ The contents of this file are subject to the Mozilla Public License, v. 2.0.
+ If a copy of the MPL was not distributed with this file, You can obtain one
+ at http://mozilla.org/MPL/2.0/.
+
+ Software distributed under the License is distributed on an "AS IS" basis,
+ WITHOUT WARRANTY OF ANY KIND, either express or implied. See the License
+ for the specific language governing rights and limitations under the License.
+
+ Copyright (C) 2015-2017 Mathieu Dhainaut. All Rights Reserved.
+
+ Author: Mathieu Dhainaut <mathieu.dhainaut@gmail.com>
+
+ ******************************* END LICENSE BLOCK ***************************/
 
 /** @constant
     @type {number}
@@ -1386,6 +1515,22 @@ OSH.Buffer = BaseClass.extend({
     }.bind(this),bufferingTime);
   }
 });
+/***************************** BEGIN LICENSE BLOCK ***************************
+
+ The contents of this file are subject to the Mozilla Public License, v. 2.0.
+ If a copy of the MPL was not distributed with this file, You can obtain one
+ at http://mozilla.org/MPL/2.0/.
+
+ Software distributed under the License is distributed on an "AS IS" basis,
+ WITHOUT WARRANTY OF ANY KIND, either express or implied. See the License
+ for the specific language governing rights and limitations under the License.
+
+ Copyright (C) 2015-2017 Mathieu Dhainaut. All Rights Reserved.
+
+ Author: Mathieu Dhainaut <mathieu.dhainaut@gmail.com>
+
+ ******************************* END LICENSE BLOCK ***************************/
+
 /**
  * @classdesc The DataConnector is the abstract class used to create different connectors.
  * @constructor
@@ -1418,6 +1563,22 @@ OSH.DataConnector.DataConnector = BaseClass.extend({
     return this.url;
   }
 });
+/***************************** BEGIN LICENSE BLOCK ***************************
+
+ The contents of this file are subject to the Mozilla Public License, v. 2.0.
+ If a copy of the MPL was not distributed with this file, You can obtain one
+ at http://mozilla.org/MPL/2.0/.
+
+ Software distributed under the License is distributed on an "AS IS" basis,
+ WITHOUT WARRANTY OF ANY KIND, either express or implied. See the License
+ for the specific language governing rights and limitations under the License.
+
+ Copyright (C) 2015-2017 Mathieu Dhainaut. All Rights Reserved.
+
+ Author: Mathieu Dhainaut <mathieu.dhainaut@gmail.com>
+
+ ******************************* END LICENSE BLOCK ***************************/
+
 /**
  * @type {OSH.DataConnector.DataConnector}
  * @classdesc Defines the AjaxConnector to connect to a remote server by making AjaxRequest.
@@ -1491,6 +1652,22 @@ OSH.DataConnector.AjaxConnector = OSH.DataConnector.DataConnector.extend({
 
     }
 });
+/***************************** BEGIN LICENSE BLOCK ***************************
+
+ The contents of this file are subject to the Mozilla Public License, v. 2.0.
+ If a copy of the MPL was not distributed with this file, You can obtain one
+ at http://mozilla.org/MPL/2.0/.
+
+ Software distributed under the License is distributed on an "AS IS" basis,
+ WITHOUT WARRANTY OF ANY KIND, either express or implied. See the License
+ for the specific language governing rights and limitations under the License.
+
+ Copyright (C) 2015-2017 Mathieu Dhainaut. All Rights Reserved.
+
+ Author: Mathieu Dhainaut <mathieu.dhainaut@gmail.com>
+
+ ******************************* END LICENSE BLOCK ***************************/
+
 /**
  * @type {OSH.DataConnector.DataConnector}
  * @classdesc Defines the AjaxConnector to connect to a remote server by making AjaxRequest.
@@ -1619,6 +1796,22 @@ OSH.DataConnector.WebSocketDataConnector = OSH.DataConnector.DataConnector.exten
         this.disconnect();
     }
 });
+
+/***************************** BEGIN LICENSE BLOCK ***************************
+
+ The contents of this file are subject to the Mozilla Public License, v. 2.0.
+ If a copy of the MPL was not distributed with this file, You can obtain one
+ at http://mozilla.org/MPL/2.0/.
+
+ Software distributed under the License is distributed on an "AS IS" basis,
+ WITHOUT WARRANTY OF ANY KIND, either express or implied. See the License
+ for the specific language governing rights and limitations under the License.
+
+ Copyright (C) 2015-2017 Mathieu Dhainaut. All Rights Reserved.
+
+ Author: Mathieu Dhainaut <mathieu.dhainaut@gmail.com>
+
+ ******************************* END LICENSE BLOCK ***************************/
 
 /**
  * @classdesc The DataSource is the abstract class used to create different datasources.
@@ -1840,6 +2033,22 @@ OSH.DataReceiver.DataSource = BaseClass.extend({
   }
 });
 
+/***************************** BEGIN LICENSE BLOCK ***************************
+
+ The contents of this file are subject to the Mozilla Public License, v. 2.0.
+ If a copy of the MPL was not distributed with this file, You can obtain one
+ at http://mozilla.org/MPL/2.0/.
+
+ Software distributed under the License is distributed on an "AS IS" basis,
+ WITHOUT WARRANTY OF ANY KIND, either express or implied. See the License
+ for the specific language governing rights and limitations under the License.
+
+ Copyright (C) 2015-2017 Mathieu Dhainaut. All Rights Reserved.
+
+ Author: Mathieu Dhainaut <mathieu.dhainaut@gmail.com>
+
+ ******************************* END LICENSE BLOCK ***************************/
+
 /**
  * @classdesc This datasource provides parsing to euler orientation.
  * Data has to be under the format : ISODATE,X,Y,
@@ -1891,6 +2100,22 @@ OSH.DataReceiver.EulerOrientation = OSH.DataReceiver.DataSource.extend({
     };
   } 
 });
+
+/***************************** BEGIN LICENSE BLOCK ***************************
+
+ The contents of this file are subject to the Mozilla Public License, v. 2.0.
+ If a copy of the MPL was not distributed with this file, You can obtain one
+ at http://mozilla.org/MPL/2.0/.
+
+ Software distributed under the License is distributed on an "AS IS" basis,
+ WITHOUT WARRANTY OF ANY KIND, either express or implied. See the License
+ for the specific language governing rights and limitations under the License.
+
+ Copyright (C) 2015-2017 Mathieu Dhainaut. All Rights Reserved.
+
+ Author: Mathieu Dhainaut <mathieu.dhainaut@gmail.com>
+
+ ******************************* END LICENSE BLOCK ***************************/
 
 /**
  * @classdesc This datasource provides parsing to Lat,Lon,Alt location.
@@ -1957,6 +2182,22 @@ OSH.DataReceiver.LatLonAlt = OSH.DataReceiver.DataSource.extend({
     };
   } 
 });
+
+/***************************** BEGIN LICENSE BLOCK ***************************
+
+ The contents of this file are subject to the Mozilla Public License, v. 2.0.
+ If a copy of the MPL was not distributed with this file, You can obtain one
+ at http://mozilla.org/MPL/2.0/.
+
+ Software distributed under the License is distributed on an "AS IS" basis,
+ WITHOUT WARRANTY OF ANY KIND, either express or implied. See the License
+ for the specific language governing rights and limitations under the License.
+
+ Copyright (C) 2012-2016 Sensia Software LLC. All Rights Reserved.
+
+ Author: Alex Robin <alex.robin@sensiasoftware.com>
+
+ ******************************* END LICENSE BLOCK ***************************/
 
 /**
  * @classdesc This datasource provides parsing to Nexrad.
@@ -2035,6 +2276,22 @@ OSH.DataReceiver.Nexrad = OSH.DataReceiver.DataSource.extend({
   } 
 });
 
+/***************************** BEGIN LICENSE BLOCK ***************************
+
+ The contents of this file are subject to the Mozilla Public License, v. 2.0.
+ If a copy of the MPL was not distributed with this file, You can obtain one
+ at http://mozilla.org/MPL/2.0/.
+
+ Software distributed under the License is distributed on an "AS IS" basis,
+ WITHOUT WARRANTY OF ANY KIND, either express or implied. See the License
+ for the specific language governing rights and limitations under the License.
+
+ Copyright (C) 2012-2016 Sensia Software LLC. All Rights Reserved.
+
+ Author: Alex Robin <alex.robin@sensiasoftware.com>
+
+ ******************************* END LICENSE BLOCK ***************************/
+
 /**
  * @classdesc This datasource provides parsing to UAH Weather Station.
  * @class OSH.DataReceiver.UAHWeather
@@ -2084,6 +2341,22 @@ OSH.DataReceiver.DataSourceUAHWeather = OSH.DataReceiver.DataSource.extend({
     };
   } 
 });
+
+/***************************** BEGIN LICENSE BLOCK ***************************
+
+ The contents of this file are subject to the Mozilla Public License, v. 2.0.
+ If a copy of the MPL was not distributed with this file, You can obtain one
+ at http://mozilla.org/MPL/2.0/.
+
+ Software distributed under the License is distributed on an "AS IS" basis,
+ WITHOUT WARRANTY OF ANY KIND, either express or implied. See the License
+ for the specific language governing rights and limitations under the License.
+
+ Copyright (C) 2015-2017 Mathieu Dhainaut. All Rights Reserved.
+
+ Author: Mathieu Dhainaut <mathieu.dhainaut@gmail.com>
+
+ ******************************* END LICENSE BLOCK ***************************/
 
 /**
  * @classdesc This datasource provides parsing to Orientation Quaternion.
@@ -2169,6 +2442,22 @@ OSH.DataReceiver.OrientationQuaternion = OSH.DataReceiver.DataSource.extend({
   } 
 });
 
+/***************************** BEGIN LICENSE BLOCK ***************************
+
+ The contents of this file are subject to the Mozilla Public License, v. 2.0.
+ If a copy of the MPL was not distributed with this file, You can obtain one
+ at http://mozilla.org/MPL/2.0/.
+
+ Software distributed under the License is distributed on an "AS IS" basis,
+ WITHOUT WARRANTY OF ANY KIND, either express or implied. See the License
+ for the specific language governing rights and limitations under the License.
+
+ Copyright (C) 2015-2017 Mathieu Dhainaut. All Rights Reserved.
+
+ Author: Mathieu Dhainaut <mathieu.dhainaut@gmail.com>
+
+ ******************************* END LICENSE BLOCK ***************************/
+
 /**
  * @classdesc This datasource provides parsing to H264 raw data.
  * Data: ArrayBuffer
@@ -2221,6 +2510,22 @@ OSH.DataReceiver.VideoH264 = OSH.DataReceiver.DataSource.extend({
 });
 
 
+/***************************** BEGIN LICENSE BLOCK ***************************
+
+ The contents of this file are subject to the Mozilla Public License, v. 2.0.
+ If a copy of the MPL was not distributed with this file, You can obtain one
+ at http://mozilla.org/MPL/2.0/.
+
+ Software distributed under the License is distributed on an "AS IS" basis,
+ WITHOUT WARRANTY OF ANY KIND, either express or implied. See the License
+ for the specific language governing rights and limitations under the License.
+
+ Copyright (C) 2015-2017 Mathieu Dhainaut. All Rights Reserved.
+
+ Author: Mathieu Dhainaut <mathieu.dhainaut@gmail.com>
+
+ ******************************* END LICENSE BLOCK ***************************/
+
 /**
  * @classdesc This datasource provides parsing to MJPEG raw data.
  * Data: ArrayBuffer
@@ -2271,6 +2576,22 @@ OSH.DataReceiver.VideoMjpeg = OSH.DataReceiver.DataSource.extend({
     return blobURL;
   } 
 });
+
+/***************************** BEGIN LICENSE BLOCK ***************************
+
+ The contents of this file are subject to the Mozilla Public License, v. 2.0.
+ If a copy of the MPL was not distributed with this file, You can obtain one
+ at http://mozilla.org/MPL/2.0/.
+
+ Software distributed under the License is distributed on an "AS IS" basis,
+ WITHOUT WARRANTY OF ANY KIND, either express or implied. See the License
+ for the specific language governing rights and limitations under the License.
+
+ Copyright (C) 2015-2017 Mathieu Dhainaut. All Rights Reserved.
+
+ Author: Mathieu Dhainaut <mathieu.dhainaut@gmail.com>
+
+ ******************************* END LICENSE BLOCK ***************************/
 
 /**
  * @classdesc This datasource provides parsing to fragmented mp4 raw data. The data is encapsulated into mp4 fragment.
@@ -2378,6 +2699,22 @@ function readNCC(bytes, n) {
     return res;
 };
 
+/***************************** BEGIN LICENSE BLOCK ***************************
+
+ The contents of this file are subject to the Mozilla Public License, v. 2.0.
+ If a copy of the MPL was not distributed with this file, You can obtain one
+ at http://mozilla.org/MPL/2.0/.
+
+ Software distributed under the License is distributed on an "AS IS" basis,
+ WITHOUT WARRANTY OF ANY KIND, either express or implied. See the License
+ for the specific language governing rights and limitations under the License.
+
+ Copyright (C) 2015-2017 Mathieu Dhainaut. All Rights Reserved.
+
+ Author: Mathieu Dhainaut <mathieu.dhainaut@gmail.com>
+
+ ******************************* END LICENSE BLOCK ***************************/
+
 /**
  * @classdesc This datasource provides parsing to chart data.
  * Data has to be under the format : ISODATE,X,Y,
@@ -2429,6 +2766,22 @@ OSH.DataReceiver.Chart = OSH.DataReceiver.DataSource.extend({
         return tokens;
     }
 });
+
+/***************************** BEGIN LICENSE BLOCK ***************************
+
+ The contents of this file are subject to the Mozilla Public License, v. 2.0.
+ If a copy of the MPL was not distributed with this file, You can obtain one
+ at http://mozilla.org/MPL/2.0/.
+
+ Software distributed under the License is distributed on an "AS IS" basis,
+ WITHOUT WARRANTY OF ANY KIND, either express or implied. See the License
+ for the specific language governing rights and limitations under the License.
+
+ Copyright (C) 2015-2017 Mathieu Dhainaut. All Rights Reserved.
+
+ Author: Mathieu Dhainaut <mathieu.dhainaut@gmail.com>
+
+ ******************************* END LICENSE BLOCK ***************************/
 
 /**
  * @classdesc This class is responsible of handling datasources. It observes necessary events to manage datasources.
@@ -2630,6 +2983,22 @@ OSH.DataReceiver.DataReceiverController = BaseClass.extend({
     }
 });
 
+/***************************** BEGIN LICENSE BLOCK ***************************
+
+ The contents of this file are subject to the Mozilla Public License, v. 2.0.
+ If a copy of the MPL was not distributed with this file, You can obtain one
+ at http://mozilla.org/MPL/2.0/.
+
+ Software distributed under the License is distributed on an "AS IS" basis,
+ WITHOUT WARRANTY OF ANY KIND, either express or implied. See the License
+ for the specific language governing rights and limitations under the License.
+
+ Copyright (C) 2012-2016 Sensia Software LLC. All Rights Reserved.
+
+ Author: Alex Robin <alex.robin@sensiasoftware.com>
+
+ ******************************* END LICENSE BLOCK ***************************/
+
 /**
  * @classdesc
  * @class
@@ -2737,6 +3106,22 @@ OSH.DataSender.DataSink = BaseClass.extend({
         return this.name;
     }
 });
+/***************************** BEGIN LICENSE BLOCK ***************************
+
+ The contents of this file are subject to the Mozilla Public License, v. 2.0.
+ If a copy of the MPL was not distributed with this file, You can obtain one
+ at http://mozilla.org/MPL/2.0/.
+
+ Software distributed under the License is distributed on an "AS IS" basis,
+ WITHOUT WARRANTY OF ANY KIND, either express or implied. See the License
+ for the specific language governing rights and limitations under the License.
+
+ Copyright (C) 2015-2017 Mathieu Dhainaut. All Rights Reserved.
+
+ Author: Mathieu Dhainaut <mathieu.dhainaut@gmail.com>
+
+ ******************************* END LICENSE BLOCK ***************************/
+
 /**
  * @classdesc
  * @class
@@ -2791,6 +3176,22 @@ OSH.DataSender.PtzTasking = OSH.DataSender.DataSink.extend({
         return xmlSpsRequest;
     }
 });
+/***************************** BEGIN LICENSE BLOCK ***************************
+
+ The contents of this file are subject to the Mozilla Public License, v. 2.0.
+ If a copy of the MPL was not distributed with this file, You can obtain one
+ at http://mozilla.org/MPL/2.0/.
+
+ Software distributed under the License is distributed on an "AS IS" basis,
+ WITHOUT WARRANTY OF ANY KIND, either express or implied. See the License
+ for the specific language governing rights and limitations under the License.
+
+ Copyright (C) 2012-2016 Sensia Software LLC. All Rights Reserved.
+
+ Author: Alex Robin <alex.robin@sensiasoftware.com>
+
+ ******************************* END LICENSE BLOCK ***************************/
+
 /**
  * @classdesc
  * @class
@@ -2927,6 +3328,22 @@ OSH.DataSender.UavMapTasking = OSH.DataSender.DataSink.extend({
     
 });
 
+/***************************** BEGIN LICENSE BLOCK ***************************
+
+ The contents of this file are subject to the Mozilla Public License, v. 2.0.
+ If a copy of the MPL was not distributed with this file, You can obtain one
+ at http://mozilla.org/MPL/2.0/.
+
+ Software distributed under the License is distributed on an "AS IS" basis,
+ WITHOUT WARRANTY OF ANY KIND, either express or implied. See the License
+ for the specific language governing rights and limitations under the License.
+
+ Copyright (C) 2015-2017 Mathieu Dhainaut. All Rights Reserved.
+
+ Author: Mathieu Dhainaut <mathieu.dhainaut@gmail.com>
+
+ ******************************* END LICENSE BLOCK ***************************/
+
 /**
  * @classdesc This class is responsible for sending request to server.
  * @class
@@ -2975,6 +3392,22 @@ OSH.DataSender.DataSenderController = BaseClass.extend({
         }
     }
 });
+/***************************** BEGIN LICENSE BLOCK ***************************
+
+ The contents of this file are subject to the Mozilla Public License, v. 2.0.
+ If a copy of the MPL was not distributed with this file, You can obtain one
+ at http://mozilla.org/MPL/2.0/.
+
+ Software distributed under the License is distributed on an "AS IS" basis,
+ WITHOUT WARRANTY OF ANY KIND, either express or implied. See the License
+ for the specific language governing rights and limitations under the License.
+
+ Copyright (C) 2015-2017 Richard Becker. All Rights Reserved.
+
+ Author: Richard Becker <beckerr@prominentedge.com>
+
+ ******************************* END LICENSE BLOCK ***************************/
+
 /**
  * @class
  * @classdesc
@@ -3364,6 +3797,22 @@ OSH.Sensor = BaseClass.extend({
   }
 });
 
+/***************************** BEGIN LICENSE BLOCK ***************************
+
+ The contents of this file are subject to the Mozilla Public License, v. 2.0.
+ If a copy of the MPL was not distributed with this file, You can obtain one
+ at http://mozilla.org/MPL/2.0/.
+
+ Software distributed under the License is distributed on an "AS IS" basis,
+ WITHOUT WARRANTY OF ANY KIND, either express or implied. See the License
+ for the specific language governing rights and limitations under the License.
+
+ Copyright (C) 2015-2017 Richard Becker. All Rights Reserved.
+
+ Author: Richard Becker <beckerr@prominentedge.com>
+
+ ******************************* END LICENSE BLOCK ***************************/
+
 /**
  * @class
  * @classdesc
@@ -3453,6 +3902,22 @@ OSH.Server = BaseClass.extend({
   }
 });
 
+/***************************** BEGIN LICENSE BLOCK ***************************
+
+ The contents of this file are subject to the Mozilla Public License, v. 2.0.
+ If a copy of the MPL was not distributed with this file, You can obtain one
+ at http://mozilla.org/MPL/2.0/.
+
+ Software distributed under the License is distributed on an "AS IS" basis,
+ WITHOUT WARRANTY OF ANY KIND, either express or implied. See the License
+ for the specific language governing rights and limitations under the License.
+
+ Copyright (C) 2015-2017 Mathieu Dhainaut. All Rights Reserved.
+
+ Author: Mathieu Dhainaut <mathieu.dhainaut@gmail.com>
+
+ ******************************* END LICENSE BLOCK ***************************/
+
 /**
  * @classdesc This class creates a log view. It catches "osh:log" events and display them into a internal dialog.
  * This view creates a dialog view
@@ -3488,6 +3953,22 @@ OSH.Log = BaseClass.extend({
 });
 
 //var log = new OSH.Log();
+/***************************** BEGIN LICENSE BLOCK ***************************
+
+ The contents of this file are subject to the Mozilla Public License, v. 2.0.
+ If a copy of the MPL was not distributed with this file, You can obtain one
+ at http://mozilla.org/MPL/2.0/.
+
+ Software distributed under the License is distributed on an "AS IS" basis,
+ WITHOUT WARRANTY OF ANY KIND, either express or implied. See the License
+ for the specific language governing rights and limitations under the License.
+
+ Copyright (C) 2015-2017 Mathieu Dhainaut. All Rights Reserved.
+
+ Author: Mathieu Dhainaut <mathieu.dhainaut@gmail.com>
+
+ ******************************* END LICENSE BLOCK ***************************/
+
 /**
  * @classdesc The abstract object to represent a view.
  * @class
@@ -3839,6 +4320,22 @@ OSH.UI.View = BaseClass.extend({
     reset: function() {
     }
 });
+/***************************** BEGIN LICENSE BLOCK ***************************
+
+ The contents of this file are subject to the Mozilla Public License, v. 2.0.
+ If a copy of the MPL was not distributed with this file, You can obtain one
+ at http://mozilla.org/MPL/2.0/.
+
+ Software distributed under the License is distributed on an "AS IS" basis,
+ WITHOUT WARRANTY OF ANY KIND, either express or implied. See the License
+ for the specific language governing rights and limitations under the License.
+
+ Copyright (C) 2015-2017 Mathieu Dhainaut. All Rights Reserved.
+
+ Author: Mathieu Dhainaut <mathieu.dhainaut@gmail.com>
+
+ ******************************* END LICENSE BLOCK ***************************/
+
 /**
  * @classdesc This class is an abstract class for ContextMenu.
  * @abstract
@@ -3892,6 +4389,22 @@ OSH.UI.ContextMenu = BaseClass.extend({
 		}.bind(this));
 	}
 });
+/***************************** BEGIN LICENSE BLOCK ***************************
+
+ The contents of this file are subject to the Mozilla Public License, v. 2.0.
+ If a copy of the MPL was not distributed with this file, You can obtain one
+ at http://mozilla.org/MPL/2.0/.
+
+ Software distributed under the License is distributed on an "AS IS" basis,
+ WITHOUT WARRANTY OF ANY KIND, either express or implied. See the License
+ for the specific language governing rights and limitations under the License.
+
+ Copyright (C) 2015-2017 Mathieu Dhainaut. All Rights Reserved.
+
+ Author: Mathieu Dhainaut <mathieu.dhainaut@gmail.com>
+
+ ******************************* END LICENSE BLOCK ***************************/
+
 /**
  * @class
  * @classdesc A css context menu allowing to create various context menu using only css.
@@ -4060,6 +4573,22 @@ OSH.UI.ContextMenu.CssMenu = OSH.UI.ContextMenu.extend({
         return matches[1];
     }
 });
+/***************************** BEGIN LICENSE BLOCK ***************************
+
+ The contents of this file are subject to the Mozilla Public License, v. 2.0.
+ If a copy of the MPL was not distributed with this file, You can obtain one
+ at http://mozilla.org/MPL/2.0/.
+
+ Software distributed under the License is distributed on an "AS IS" basis,
+ WITHOUT WARRANTY OF ANY KIND, either express or implied. See the License
+ for the specific language governing rights and limitations under the License.
+
+ Copyright (C) 2015-2017 Mathieu Dhainaut. All Rights Reserved.
+
+ Author: Mathieu Dhainaut <mathieu.dhainaut@gmail.com>
+
+ ******************************* END LICENSE BLOCK ***************************/
+
 /**
  * @classdesc A circular context menu
  * @class
@@ -4083,6 +4612,22 @@ OSH.UI.ContextMenu.CircularMenu = OSH.UI.ContextMenu.CssMenu.extend({
         this._super(properties,"circular");
     }
 });
+/***************************** BEGIN LICENSE BLOCK ***************************
+
+ The contents of this file are subject to the Mozilla Public License, v. 2.0.
+ If a copy of the MPL was not distributed with this file, You can obtain one
+ at http://mozilla.org/MPL/2.0/.
+
+ Software distributed under the License is distributed on an "AS IS" basis,
+ WITHOUT WARRANTY OF ANY KIND, either express or implied. See the License
+ for the specific language governing rights and limitations under the License.
+
+ Copyright (C) 2015-2017 Mathieu Dhainaut. All Rights Reserved.
+
+ Author: Mathieu Dhainaut <mathieu.dhainaut@gmail.com>
+
+ ******************************* END LICENSE BLOCK ***************************/
+
 /**
  * @classdesc A stack context menu
  * @class
@@ -4172,6 +4717,22 @@ OSH.UI.ContextMenu.StackMenu = OSH.UI.ContextMenu.CssMenu.extend({
         }
     }
 });
+/***************************** BEGIN LICENSE BLOCK ***************************
+
+ The contents of this file are subject to the Mozilla Public License, v. 2.0.
+ If a copy of the MPL was not distributed with this file, You can obtain one
+ at http://mozilla.org/MPL/2.0/.
+
+ Software distributed under the License is distributed on an "AS IS" basis,
+ WITHOUT WARRANTY OF ANY KIND, either express or implied. See the License
+ for the specific language governing rights and limitations under the License.
+
+ Copyright (C) 2015-2017 Mathieu Dhainaut. All Rights Reserved.
+
+ Author: Mathieu Dhainaut <mathieu.dhainaut@gmail.com>
+
+ ******************************* END LICENSE BLOCK ***************************/
+
 /**
  * @classdesc
  * @class OSH.UI.Styler
@@ -4293,6 +4854,22 @@ OSH.UI.Styler = BaseClass.extend({
 	 */
 	init: function() {}
 });
+/***************************** BEGIN LICENSE BLOCK ***************************
+
+ The contents of this file are subject to the Mozilla Public License, v. 2.0.
+ If a copy of the MPL was not distributed with this file, You can obtain one
+ at http://mozilla.org/MPL/2.0/.
+
+ Software distributed under the License is distributed on an "AS IS" basis,
+ WITHOUT WARRANTY OF ANY KIND, either express or implied. See the License
+ for the specific language governing rights and limitations under the License.
+
+ Copyright (C) 2015-2017 Sensia Software LLC. All Rights Reserved.
+
+ Author: Alex Robin <alex.robin@sensiasoft.com>
+
+ ******************************* END LICENSE BLOCK ***************************/
+
 /**
  * @classdesc
  * @class OSH.UI.Styler.ImageDraping
@@ -4390,8 +4967,9 @@ OSH.UI.Styler.ImageDraping = OSH.UI.Styler.extend({
 		if (this._super(dataSourceId,rec,view,options)) {
 			
 			var enabled = true;
+			var snapshot = false;
 			if (this.snapshotFunc != null)
-				enabled = this.snapshotFunc();
+			    snapshot = this.snapshotFunc();
 			
 			if (typeof(view) != "undefined" && enabled &&
 				this.platformLocation != null &&
@@ -4399,12 +4977,28 @@ OSH.UI.Styler.ImageDraping = OSH.UI.Styler.extend({
 				this.gimbalOrientation != null &&
 				this.cameraModel != null &&
 				this.imageSrc != null) {
-				    view.updateDrapedImage(this,rec.timeStamp,options);
+				    view.updateDrapedImage(this,rec.timeStamp,options,snapshot);
 			}
 		}
 	}
 
 });
+/***************************** BEGIN LICENSE BLOCK ***************************
+
+ The contents of this file are subject to the Mozilla Public License, v. 2.0.
+ If a copy of the MPL was not distributed with this file, You can obtain one
+ at http://mozilla.org/MPL/2.0/.
+
+ Software distributed under the License is distributed on an "AS IS" basis,
+ WITHOUT WARRANTY OF ANY KIND, either express or implied. See the License
+ for the specific language governing rights and limitations under the License.
+
+ Copyright (C) 2015-2017 Mathieu Dhainaut. All Rights Reserved.
+
+ Author: Mathieu Dhainaut <mathieu.dhainaut@gmail.com>
+
+ ******************************* END LICENSE BLOCK ***************************/
+
 /**
  * @classdesc
  * @class OSH.UI.Styler.Curve
@@ -4479,6 +5073,22 @@ OSH.UI.Styler.Curve = OSH.UI.Styler.extend({
 		}
 	}
 });
+/***************************** BEGIN LICENSE BLOCK ***************************
+
+ The contents of this file are subject to the Mozilla Public License, v. 2.0.
+ If a copy of the MPL was not distributed with this file, You can obtain one
+ at http://mozilla.org/MPL/2.0/.
+
+ Software distributed under the License is distributed on an "AS IS" basis,
+ WITHOUT WARRANTY OF ANY KIND, either express or implied. See the License
+ for the specific language governing rights and limitations under the License.
+
+ Copyright (C) 2015-2017 Sensia Software LLC. All Rights Reserved.
+
+ Author: Alex Robin <alex.robin@sensiasoft.com>
+
+ ******************************* END LICENSE BLOCK ***************************/
+
 /**
  * @classdesc
  * @class OSH.UI.Styler.Nexrad
@@ -4629,6 +5239,22 @@ OSH.UI.Styler.Nexrad = OSH.UI.Styler.extend({
 	}
 
 });
+/***************************** BEGIN LICENSE BLOCK ***************************
+
+ The contents of this file are subject to the Mozilla Public License, v. 2.0.
+ If a copy of the MPL was not distributed with this file, You can obtain one
+ at http://mozilla.org/MPL/2.0/.
+
+ Software distributed under the License is distributed on an "AS IS" basis,
+ WITHOUT WARRANTY OF ANY KIND, either express or implied. See the License
+ for the specific language governing rights and limitations under the License.
+
+ Copyright (C) 2015-2017 Mathieu Dhainaut. All Rights Reserved.
+
+ Author: Mathieu Dhainaut <mathieu.dhainaut@gmail.com>
+
+ ******************************* END LICENSE BLOCK ***************************/
+
 /**
  * @class OSH.UI.Styler.Polyline
  * @classdesc
@@ -4752,6 +5378,22 @@ OSH.UI.Styler.Polyline = OSH.UI.Styler.extend({
 		this.locations = [];
 	}
 });
+/***************************** BEGIN LICENSE BLOCK ***************************
+
+ The contents of this file are subject to the Mozilla Public License, v. 2.0.
+ If a copy of the MPL was not distributed with this file, You can obtain one
+ at http://mozilla.org/MPL/2.0/.
+
+ Software distributed under the License is distributed on an "AS IS" basis,
+ WITHOUT WARRANTY OF ANY KIND, either express or implied. See the License
+ for the specific language governing rights and limitations under the License.
+
+ Copyright (C) 2015-2017 Mathieu Dhainaut. All Rights Reserved.
+
+ Author: Mathieu Dhainaut <mathieu.dhainaut@gmail.com>
+
+ ******************************* END LICENSE BLOCK ***************************/
+
 /**
  * @classdesc
  * @class OSH.UI.Styler.PointMarker
@@ -4910,6 +5552,22 @@ OSH.UI.Styler.PointMarker = OSH.UI.Styler.extend({
 	}
 
 });
+/***************************** BEGIN LICENSE BLOCK ***************************
+
+ The contents of this file are subject to the Mozilla Public License, v. 2.0.
+ If a copy of the MPL was not distributed with this file, You can obtain one
+ at http://mozilla.org/MPL/2.0/.
+
+ Software distributed under the License is distributed on an "AS IS" basis,
+ WITHOUT WARRANTY OF ANY KIND, either express or implied. See the License
+ for the specific language governing rights and limitations under the License.
+
+ Copyright (C) 2015-2017 Mathieu Dhainaut. All Rights Reserved.
+
+ Author: Mathieu Dhainaut <mathieu.dhainaut@gmail.com>
+
+ ******************************* END LICENSE BLOCK ***************************/
+
 /**
  * @classdesc
  * @class OSH.UI.Nvd3CurveChartView
@@ -5121,6 +5779,22 @@ OSH.UI.Nvd3CurveChartView = OSH.UI.View.extend({
         this.chart.update();
     }
 });
+/***************************** BEGIN LICENSE BLOCK ***************************
+
+ The contents of this file are subject to the Mozilla Public License, v. 2.0.
+ If a copy of the MPL was not distributed with this file, You can obtain one
+ at http://mozilla.org/MPL/2.0/.
+
+ Software distributed under the License is distributed on an "AS IS" basis,
+ WITHOUT WARRANTY OF ANY KIND, either express or implied. See the License
+ for the specific language governing rights and limitations under the License.
+
+ Copyright (C) 2015-2017 Mathieu Dhainaut. All Rights Reserved.
+
+ Author: Mathieu Dhainaut <mathieu.dhainaut@gmail.com>
+
+ ******************************* END LICENSE BLOCK ***************************/
+
 /**
  * @classdesc
  * @class OSH.UI.DiscoveryView
@@ -5804,6 +6478,22 @@ OSH.UI.DiscoveryView.Type = {
     DIALOG_VIDEO_MJPEG: "Video Dialog(MJPEG)",
     DIALOG_CHART : "Chart Dialog"
 };
+/***************************** BEGIN LICENSE BLOCK ***************************
+
+ The contents of this file are subject to the Mozilla Public License, v. 2.0.
+ If a copy of the MPL was not distributed with this file, You can obtain one
+ at http://mozilla.org/MPL/2.0/.
+
+ Software distributed under the License is distributed on an "AS IS" basis,
+ WITHOUT WARRANTY OF ANY KIND, either express or implied. See the License
+ for the specific language governing rights and limitations under the License.
+
+ Copyright (C) 2015-2017 Mathieu Dhainaut. All Rights Reserved.
+
+ Author: Mathieu Dhainaut <mathieu.dhainaut@gmail.com>
+
+ ******************************* END LICENSE BLOCK ***************************/
+
 /**
  * @classdesc
  * @class
@@ -5926,6 +6616,23 @@ OSH.UI.EntityTreeView = OSH.UI.View.extend({
         }
     }
 });
+/***************************** BEGIN LICENSE BLOCK ***************************
+
+ The contents of this file are subject to the Mozilla Public License, v. 2.0.
+ If a copy of the MPL was not distributed with this file, You can obtain one
+ at http://mozilla.org/MPL/2.0/.
+
+ Software distributed under the License is distributed on an "AS IS" basis,
+ WITHOUT WARRANTY OF ANY KIND, either express or implied. See the License
+ for the specific language governing rights and limitations under the License.
+
+ Copyright (C) 2015-2017 Sensia Software LLC. All Rights Reserved.
+
+ Author: Mathieu Dhainaut <mathieu.dhainaut@gmail.com>
+ Author: Alex Robin <alex.robin@sensiasoft.com>
+
+ ******************************* END LICENSE BLOCK ***************************/
+
 /**
  * @classdesc
  * @class
@@ -5971,7 +6678,12 @@ OSH.UI.CesiumView = OSH.UI.View.extend({
 		document.getElementById(this.divId).setAttribute("class", cssClass+" "+this.css);
 		
 		this.imageDrapingPrimitive = null;
+		this.imageDrapingPrimitiveReady = false;		
 		this.frameCount = 0;
+		
+		this.captureCanvas = document.createElement('canvas');
+		this.captureCanvas.width = 640;
+		this.captureCanvas.height = 480;
 	},
 
 	/**
@@ -6024,7 +6736,7 @@ OSH.UI.CesiumView = OSH.UI.View.extend({
 	 * @memberof OSH.UI.CesiumView
 	 *
 	 */
-    updateDrapedImage: function(styler,timeStamp,options) {
+    updateDrapedImage: function(styler,timeStamp,options,snapshot) {
 		
     	var llaPos = styler.platformLocation;
     	var camPos = Cesium.Cartesian3.fromDegrees(llaPos.x, llaPos.y, llaPos.z);
@@ -6067,26 +6779,94 @@ OSH.UI.CesiumView = OSH.UI.View.extend({
     	var camDistR = styler.cameraModel.camDistR;
     	var camDistT = styler.cameraModel.camDistT;
     	
-    	var videoElt = styler.imageSrc;
+    	var imgSrc = styler.imageSrc;
     	
     	//if (this.frameCount%60 == 0)
     	{
-	    	var newImageDrapingPrimitive = this.viewer.scene.primitives.add(new Cesium.ImageDrapingPrimitive({
+	    	/*var newImageDrapingPrimitive = this.viewer.scene.primitives.add(new Cesium.ImageDrapingPrimitive({
 	            imageSrc: videoElt,
 	            camPos: camPos,
 	            camRot: camRot,
 	            camProj: camProj,
 	            camDistR: camDistR,
 	            camDistT: camDistT,
-	            asynchronous : false
+	            asynchronous : true
 	        }));
-	    	
-	    	// remove previous primitive
-	    	if (styler.snapshotFunc == null) {
-	    	    if (this.imageDrapingPrimitive != null) {
-	    		    this.viewer.scene.primitives.remove(this.imageDrapingPrimitive);
-	            }
-	    	    this.imageDrapingPrimitive = newImageDrapingPrimitive;
+	        
+	        // remove previous primitive
+            if (styler.snapshotFunc == null) {
+                if (this.imageDrapingPrimitive != null) {
+                    this.viewer.scene.primitives.remove(this.imageDrapingPrimitive);
+                }
+                this.imageDrapingPrimitive = newImageDrapingPrimitive;
+            }*/
+    	    
+    	    // snapshot
+            if (snapshot) {
+                var ctx = this.captureCanvas.getContext('2d');
+                ctx.drawImage(imgSrc, 0, 0, this.captureCanvas.width, this.captureCanvas.height);
+                imgSrc = this.captureCanvas;                
+            }
+    	    
+    	    var encCamPos = Cesium.EncodedCartesian3.fromCartesian(camPos);
+    	    var appearance = new Cesium.MaterialAppearance({
+                material : new Cesium.Material({
+                    fabric : {
+                        type : 'Image',
+                        uniforms : {
+                            image : imgSrc,
+                            camPosHigh : encCamPos.high,
+                            camPosLow : encCamPos.low,
+                            camAtt: Cesium.Matrix3.toArray(Cesium.Matrix3.transpose(camRot, new Cesium.Matrix3())),
+                            camProj: Cesium.Matrix3.toArray(camProj),
+                            camDistR: camDistR,
+                            camDistT: camDistT
+                        }
+                    }
+                }),
+                vertexShaderSource: Cesium._shaders.ImageDrapingVS,
+                fragmentShaderSource: Cesium._shaders.ImageDrapingFS
+            });
+    	    
+    	    /*appearance = new Cesium.MaterialAppearance({
+                material : new Cesium.Material({
+                    fabric : {
+                        type: 'Color',
+                        uniforms : {
+                            color : new Cesium.Color(1.0, 0.0, 0.0, 0.5)
+                        }
+                    }
+                })
+            });*/
+    	    
+    	    if (this.imageDrapingPrimitive == null || snapshot) {    	        
+    	        if (this.imageDrapingPrimitive == null)
+    	            this.imageDrapingPrimitive = {};
+    	        
+    	        var promise = Cesium.sampleTerrain(this.viewer.terrainProvider, 11, [Cesium.Cartographic.fromDegrees(llaPos.x, llaPos.y)]);
+    	        var that = this;
+                Cesium.when(promise, function(updatedPositions) {
+                    //console.log(updatedPositions[0]);
+                    var newImageDrapingPrimitive = that.viewer.scene.primitives.add(new Cesium.Primitive({
+                        geometryInstances: new Cesium.GeometryInstance({
+                            geometry: new Cesium.RectangleGeometry({
+                                rectangle: Cesium.Rectangle.fromDegrees(llaPos.x-0.1, llaPos.y-0.1, llaPos.x+0.1, llaPos.y+0.1),
+                                height: updatedPositions[0].height-100,
+                                extrudedHeight: llaPos.z-1
+                            })
+                        }), 
+                        appearance: appearance
+                    }));
+                    
+                    if (!snapshot)
+                        that.imageDrapingPrimitive = newImageDrapingPrimitive;
+                    
+                    that.viewer.scene.primitives.raiseToTop(that.imageDrapingPrimitive);
+                    that.imageDrapingPrimitiveReady = true;
+                });                
+    	        
+    	    } else if (this.imageDrapingPrimitiveReady) {
+    	        this.imageDrapingPrimitive.appearance = appearance;
     	    }
     	}
     	
@@ -6239,7 +7019,7 @@ OSH.UI.CesiumView = OSH.UI.View.extend({
     			var heading = orient.heading;
 	    		var pitch = 0.0;
 	    		var roll = 0.0;
-    			var quat = Cesium.Transforms.headingPitchRollQuaternion(pos, heading*DTR, /*roll*DTR*/0.0, pitch*DTR); // inverse roll and pitch to go from NED to ENU
+	    		var quat = Cesium.Transforms.headingPitchRollQuaternion(pos, new Cesium.HeadingPitchRoll(heading*DTR, /*roll*DTR*/0.0, pitch*DTR)); // inverse roll and pitch to go from NED to ENU
 	    		marker.orientation = quat;
     	    }
     		
@@ -6275,6 +7055,22 @@ OSH.UI.CesiumView = OSH.UI.View.extend({
 		return altitude;
 	},
 });
+/***************************** BEGIN LICENSE BLOCK ***************************
+
+ The contents of this file are subject to the Mozilla Public License, v. 2.0.
+ If a copy of the MPL was not distributed with this file, You can obtain one
+ at http://mozilla.org/MPL/2.0/.
+
+ Software distributed under the License is distributed on an "AS IS" basis,
+ WITHOUT WARRANTY OF ANY KIND, either express or implied. See the License
+ for the specific language governing rights and limitations under the License.
+
+ Copyright (C) 2015-2017 Mathieu Dhainaut. All Rights Reserved.
+
+ Author: Mathieu Dhainaut <mathieu.dhainaut@gmail.com>
+
+ ******************************* END LICENSE BLOCK ***************************/
+
 /**
  * @classdesc
  * @class
@@ -6681,6 +7477,22 @@ OSH.UI.DialogView = OSH.UI.View.extend({
         return false;
     }
 });
+/***************************** BEGIN LICENSE BLOCK ***************************
+
+ The contents of this file are subject to the Mozilla Public License, v. 2.0.
+ If a copy of the MPL was not distributed with this file, You can obtain one
+ at http://mozilla.org/MPL/2.0/.
+
+ Software distributed under the License is distributed on an "AS IS" basis,
+ WITHOUT WARRANTY OF ANY KIND, either express or implied. See the License
+ for the specific language governing rights and limitations under the License.
+
+ Copyright (C) 2015-2017 Mathieu Dhainaut. All Rights Reserved.
+
+ Author: Mathieu Dhainaut <mathieu.dhainaut@gmail.com>
+
+ ******************************* END LICENSE BLOCK ***************************/
+
 /**
  * @classdesc Display a dialog with multiple view attach to it.
  * @class
@@ -6754,6 +7566,22 @@ OSH.UI.MultiDialogView = OSH.UI.DialogView.extend({
         //  }
     }
 });
+/***************************** BEGIN LICENSE BLOCK ***************************
+
+ The contents of this file are subject to the Mozilla Public License, v. 2.0.
+ If a copy of the MPL was not distributed with this file, You can obtain one
+ at http://mozilla.org/MPL/2.0/.
+
+ Software distributed under the License is distributed on an "AS IS" basis,
+ WITHOUT WARRANTY OF ANY KIND, either express or implied. See the License
+ for the specific language governing rights and limitations under the License.
+
+ Copyright (C) 2015-2017 Mathieu Dhainaut. All Rights Reserved.
+
+ Author: Mathieu Dhainaut <mathieu.dhainaut@gmail.com>
+
+ ******************************* END LICENSE BLOCK ***************************/
+
 /**
  * @class
  * @classdesc
@@ -6785,6 +7613,22 @@ OSH.UI.Loading = BaseClass.extend({
 });
 
 new OSH.UI.Loading();
+/***************************** BEGIN LICENSE BLOCK ***************************
+
+ The contents of this file are subject to the Mozilla Public License, v. 2.0.
+ If a copy of the MPL was not distributed with this file, You can obtain one
+ at http://mozilla.org/MPL/2.0/.
+
+ Software distributed under the License is distributed on an "AS IS" basis,
+ WITHOUT WARRANTY OF ANY KIND, either express or implied. See the License
+ for the specific language governing rights and limitations under the License.
+
+ Copyright (C) 2015-2017 Mathieu Dhainaut. All Rights Reserved.
+
+ Author: Mathieu Dhainaut <mathieu.dhainaut@gmail.com>
+
+ ******************************* END LICENSE BLOCK ***************************/
+
 /**
  * @classdesc
  * @class
@@ -6937,6 +7781,22 @@ OSH.UI.RangeSlider = OSH.UI.View.extend({
 		this.lock = true;
 	}
 });
+/***************************** BEGIN LICENSE BLOCK ***************************
+
+ The contents of this file are subject to the Mozilla Public License, v. 2.0.
+ If a copy of the MPL was not distributed with this file, You can obtain one
+ at http://mozilla.org/MPL/2.0/.
+
+ Software distributed under the License is distributed on an "AS IS" basis,
+ WITHOUT WARRANTY OF ANY KIND, either express or implied. See the License
+ for the specific language governing rights and limitations under the License.
+
+ Copyright (C) 2015-2017 Mathieu Dhainaut. All Rights Reserved.
+
+ Author: Mathieu Dhainaut <mathieu.dhainaut@gmail.com>
+
+ ******************************* END LICENSE BLOCK ***************************/
+
 var htmlTaskingComponent="";
 htmlTaskingComponent += "<svg xmlns=\"http:\/\/www.w3.org\/2000\/svg\" xmlns:xlink=\"http:\/\/www.w3.org\/1999\/xlink\" viewBox=\"-2 -2 504 504\" id=\"menu\" style=\"transform-origin: 50% 50% 0px; transform: translate3d(0px, 0px, 0px); touch-action: none; -webkit-user-select: none;\">";
 htmlTaskingComponent += "<g id=\"symbolsContainer\">    <symbol class=\"icon icon-\" id=\"icon-1\" viewBox=\"0 0 59 59\"><!--Replace the contents of this symbol with the content of your icon--><rect fill=\"none\" stroke=\"#111\" stroke-width=\"1\" width=\"100%\" height=\"100%\"><\/rect><text fill=\"#222\" x=\"50%\" y=\"50%\" dy=\".3em\" text-anchor=\"middle\" font-size=\"1.2em\">1<\/text><\/symbol>";
@@ -7103,6 +7963,22 @@ OSH.UI.PtzTaskingView = OSH.UI.View.extend({
     }
 });
 
+
+/***************************** BEGIN LICENSE BLOCK ***************************
+
+ The contents of this file are subject to the Mozilla Public License, v. 2.0.
+ If a copy of the MPL was not distributed with this file, You can obtain one
+ at http://mozilla.org/MPL/2.0/.
+
+ Software distributed under the License is distributed on an "AS IS" basis,
+ WITHOUT WARRANTY OF ANY KIND, either express or implied. See the License
+ for the specific language governing rights and limitations under the License.
+
+ Copyright (C) 2015-2017 Mathieu Dhainaut. All Rights Reserved.
+
+ Author: Mathieu Dhainaut <mathieu.dhainaut@gmail.com>
+
+ ******************************* END LICENSE BLOCK ***************************/
 
 /**
  * @classdesc
@@ -7550,6 +8426,22 @@ OSH.UI.FFMPEGView = OSH.UI.View.extend({
         };
     },
 });
+/***************************** BEGIN LICENSE BLOCK ***************************
+
+ The contents of this file are subject to the Mozilla Public License, v. 2.0.
+ If a copy of the MPL was not distributed with this file, You can obtain one
+ at http://mozilla.org/MPL/2.0/.
+
+ Software distributed under the License is distributed on an "AS IS" basis,
+ WITHOUT WARRANTY OF ANY KIND, either express or implied. See the License
+ for the specific language governing rights and limitations under the License.
+
+ Copyright (C) 2015-2017 Mathieu Dhainaut. All Rights Reserved.
+
+ Author: Mathieu Dhainaut <mathieu.dhainaut@gmail.com>
+
+ ******************************* END LICENSE BLOCK ***************************/
+
 /**
  * @class
  * @classdesc
@@ -7704,6 +8596,22 @@ OSH.UI.H264View = OSH.UI.View.extend({
 	    }
 	}
 });
+/***************************** BEGIN LICENSE BLOCK ***************************
+
+ The contents of this file are subject to the Mozilla Public License, v. 2.0.
+ If a copy of the MPL was not distributed with this file, You can obtain one
+ at http://mozilla.org/MPL/2.0/.
+
+ Software distributed under the License is distributed on an "AS IS" basis,
+ WITHOUT WARRANTY OF ANY KIND, either express or implied. See the License
+ for the specific language governing rights and limitations under the License.
+
+ Copyright (C) 2015-2017 Mathieu Dhainaut. All Rights Reserved.
+
+ Author: Mathieu Dhainaut <mathieu.dhainaut@gmail.com>
+
+ ******************************* END LICENSE BLOCK ***************************/
+
 /**
  * @classdesc
  * @class
@@ -7791,6 +8699,22 @@ OSH.UI.MjpegView = OSH.UI.View.extend({
   }
 });
 
+
+/***************************** BEGIN LICENSE BLOCK ***************************
+
+ The contents of this file are subject to the Mozilla Public License, v. 2.0.
+ If a copy of the MPL was not distributed with this file, You can obtain one
+ at http://mozilla.org/MPL/2.0/.
+
+ Software distributed under the License is distributed on an "AS IS" basis,
+ WITHOUT WARRANTY OF ANY KIND, either express or implied. See the License
+ for the specific language governing rights and limitations under the License.
+
+ Copyright (C) 2015-2017 Mathieu Dhainaut. All Rights Reserved.
+
+ Author: Mathieu Dhainaut <mathieu.dhainaut@gmail.com>
+
+ ******************************* END LICENSE BLOCK ***************************/
 
 /**
  * @classdesc

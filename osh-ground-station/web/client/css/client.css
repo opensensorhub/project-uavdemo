@@ -150,3 +150,25 @@ a.navbar-brand:hover {
     right: 10;
     z-index: 10;
 }
+
+#sliders {
+    position: absolute;
+    top: 7;
+    right: 100;
+    z-index: 10;
+}
+
+#sliders p {
+    display: inline-table;
+    margin-right: 20px;
+    width: 200px;
+}
+
+#sliders span {
+    display: inline;
+}
+
+#sliders input {
+    vertical-align: middle;
+    width: 100%;
+}
